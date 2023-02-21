@@ -1,12 +1,9 @@
-interface Props {
-  city: string;
-}
-export const api = async (city: Props) => {
-  const url: 'http://api.weatherapi.com/v1/current.json?key=bacc33e35e9f4f63bc0214851222408&q=${city}&aqi=no'
-  console.log(city)
-
+export const api = async (city: string) => {
+  const url: `http://api.weatherapi.com/v1/current.json?key=09d757c0c16149f391c12609232102&q=${city}&aqi=no`
+  
   const fetchResponse = await fetch(url)
   const data = await fetchResponse.json()
+  console.log(data)
   
   return data
 }

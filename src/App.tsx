@@ -1,20 +1,18 @@
 import { FormEvent, useState } from "react"
 import { WheaderInformations } from "./components/WheaderInformations"
-import api from "./lib/api"
+import { api } from "./lib/api"
 import { AppContainer, Card, Form } from "./styles/pages/main"
 
 export const App = () => {
   const [city, setCity] = useState('')
   const [data, setData] = useState('')
+  
 
-  console.log(city)
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    alert('search some sthing')
+    alert('search some thing')
 
-    api(city).then((response) => {
-      setData(response)
-    })
+    api(city)
   }
 
   return (
