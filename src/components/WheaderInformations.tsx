@@ -1,13 +1,37 @@
-import { CardContainer, City, Icone, State, StateAndCountry, Temperature } from "../styles/pages/Card"
+import { WeatherContent } from "../App"
+import { CardContainer, City,  State, StateAndCountry, Temperature } from "../styles/pages/Card"
 
-export const WheaderInformations = () => {
+interface WeatherProps {
+  data: WeatherContent
+}
+
+export const WheaderInformations = ({ data }: WeatherProps) => {
+
   return (
     <CardContainer>
-      <City>Fortaleza</City>
-      <StateAndCountry>Bahia, Brazil</StateAndCountry>
-      <Temperature>27 <span>°C</span></Temperature>
-      <Icone>icone</Icone>
-      <State>Nublado</State>
+      {
+        data.location === undefined 
+        ?
+        <>
+          <City>none</City>
+          <StateAndCountry>none, none</StateAndCountry>
+          <Temperature>0 <span>°C</span></Temperature>
+          <State>
+            - -
+          </State>
+        </>
+        :
+        <>
+          <City>{data.location.name}</City>
+          <StateAndCountry>{data.location.region}, {data.location.country}</StateAndCountry>
+          <Temperature>{data.current.temp_c} <span>°C</span></Temperature>
+          <State>
+            <img src={data.current.condition.icon} alt="Image of temp" />
+            {data.current.condition.text}
+          </State>
+        </>
+      
+      }
     </CardContainer>
   )
 }

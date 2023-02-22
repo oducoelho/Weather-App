@@ -1,7 +1,7 @@
 import { styled } from "..";
 
 export const CardContainer = styled('div', {
-  boxShadow: '1'
+  boxShadow: '1',
 })
 export const City = styled('div', {
   paddingTop: '10px',
@@ -24,15 +24,17 @@ export const Temperature = styled('div', {
     fontSize: '$md',
   }
 })
-export const Icone = styled('div', {
-  fontSize: '$lg',
-  display: 'flex',
-  justifyContent: 'center'
-})
+
 export const State = styled('div', {
   fontSize: '$sm',
   display: 'flex',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
+
+  img: {
+    width: '20%',
+  }
 })
 
 

@@ -1,18 +1,36 @@
-import { FormEvent, useState } from "react"
+import { FormEvent, useState, useEffect } from "react"
 import { WheaderInformations } from "./components/WheaderInformations"
 import { api } from "./lib/api"
 import { AppContainer, Card, Form } from "./styles/pages/main"
 
+export interface WeatherContent {
+  location: {
+    name: string;
+    region: string;
+    country: string;
+  },
+  current: {
+    temp_c: string;
+    condition: {
+      text: string;
+      icon: string;
+    }
+  },
+}
+
 export const App = () => {
   const [city, setCity] = useState('')
-  const [data, setData] = useState('')
+  const [data, setData] = useState<WeatherContent>({} as WeatherContent)
   
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    alert('search some thing')
 
-    api(city)
+    const response = await api.get(
+      `${city}&aqi=no`
+    )
+
+    setData(response.data)
   }
 
   return (
@@ -29,7 +47,7 @@ export const App = () => {
             <button>Search</button>
           </Form>
         </form>
-        <WheaderInformations />
+        <WheaderInformations data={data} />
       </Card>
     </AppContainer>
   )
