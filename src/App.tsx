@@ -1,4 +1,4 @@
-import { FormEvent, useState, useEffect } from "react"
+import { FormEvent, useState } from "react"
 import { WheaderInformations } from "./components/WheaderInformations"
 import { api } from "./lib/api"
 import { AppContainer, Card, Form } from "./styles/pages/main"

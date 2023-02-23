@@ -7,11 +7,13 @@ export const AppContainer = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
+
 })
 export const Card = styled('div', {
   backgroundColor: 'white',
   padding: '20px',
   borderRadius: 8,
+  boxShadow: "0px 20px 30px rgba(0, 0, 0, 0.5)",
 })
 
 export const Form = styled('div', {
@@ -29,7 +31,9 @@ export const Form = styled('div', {
     border: 'none',
     padding: '10px',
     cursor: 'pointer',
+    color: 'white',
+    fontWeight: '500',
     borderRadius: 8,
-    backgroundColor: 'lightblue',
+    backgroundColor: '$blue600',
   }
 })

@@ -12,7 +12,7 @@ export const globalStyles = globalCss({
   },
   
   body: {
-    backgroundColor: '#E8FEFF',
+    backgroundColor: '$white100',
   },
   
   'body, input, button': {

@@ -13,12 +13,6 @@ export const WheaderInformations = ({ data }: WeatherProps) => {
         data.location === undefined 
         ?
         <>
-          <City>none</City>
-          <StateAndCountry>none, none</StateAndCountry>
-          <Temperature>0 <span>°C</span></Temperature>
-          <State>
-            - -
-          </State>
         </>
         :
         <>

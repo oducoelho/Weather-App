@@ -1,7 +1,7 @@
 import { styled } from "..";
 
 export const CardContainer = styled('div', {
-  boxShadow: '1',
+  color: '$text700',
 })
 export const City = styled('div', {
   paddingTop: '10px',
