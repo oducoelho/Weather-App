@@ -1,13 +1,11 @@
 import { styled } from "..";
 
-
 export const AppContainer = styled('div', {
   height: '100vh',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
-
 })
 export const Card = styled('div', {
   backgroundColor: 'white',
@@ -35,5 +33,16 @@ export const Form = styled('div', {
     fontWeight: '500',
     borderRadius: 8,
     backgroundColor: '$blue600',
+  }
+})
+
+export const Text = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  span: {
+    fontSize: '$md',
+    color: '$white100',
+    fontWeight: 'inherit',
+    paddingBottom: '10px'
   }
 })

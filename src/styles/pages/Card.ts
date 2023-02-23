@@ -24,7 +24,6 @@ export const Temperature = styled('div', {
     fontSize: '$md',
   }
 })
-
 export const State = styled('div', {
   fontSize: '$sm',
   display: 'flex',
@@ -34,6 +33,17 @@ export const State = styled('div', {
 
   img: {
     width: '20%',
+  }
+})
+export const CityIsEmpty = styled('div', {
+  fontSize: '$sm',
+  display: 'flex',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
+
+  img: {
+    width: '50%',
   }
 })
 

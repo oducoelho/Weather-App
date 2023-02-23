@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react"
 import { WheaderInformations } from "./components/WheaderInformations"
 import { api } from "./lib/api"
-import { AppContainer, Card, Form } from "./styles/pages/main"
+import { AppContainer, Card, Form, Text} from "./styles/pages/main"
 
 export interface WeatherContent {
   location: {
@@ -21,21 +21,26 @@ export interface WeatherContent {
 export const App = () => {
   const [city, setCity] = useState('')
   const [data, setData] = useState<WeatherContent>({} as WeatherContent)
+
   
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-
+    if (city.length === 0) {
+      alert('Please put a name of city before submitting')
+    }
     const response = await api.get(
       `${city}&aqi=no`
     )
-
     setData(response.data)
   }
-
+  
   return (
     <AppContainer>
       <Card>
+        <Text>
+          <span>Check the weather of a city</span>
+        </Text>
         <form onSubmit={handleSubmit}>
           <Form>
             <input 
@@ -47,7 +52,9 @@ export const App = () => {
             <button>Search</button>
           </Form>
         </form>
-        <WheaderInformations data={data} />
+        <WheaderInformations 
+          data={data} 
+        />
       </Card>
     </AppContainer>
   )

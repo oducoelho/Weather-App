@@ -6,7 +6,6 @@ interface WeatherProps {
 }
 
 export const WheaderInformations = ({ data }: WeatherProps) => {
-
   return (
     <CardContainer>
       {

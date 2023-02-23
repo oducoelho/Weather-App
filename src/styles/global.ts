@@ -12,7 +12,8 @@ export const globalStyles = globalCss({
   },
   
   body: {
-    backgroundColor: '$white100',
+    //backgroundColor: '$white100',
+    background: 'linear-gradient(180deg, rgba(89, 76, 238, 1) 0%, #8dd0f5 100%)'
   },
   
   'body, input, button': {
