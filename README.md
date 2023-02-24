@@ -8,9 +8,9 @@ Users should be able to:
 
 ### Screenshot 📷
 
-https://github.com/oducoelho/Weather-App/blob/master/images/first%20image.JPG
+![Main image of website](https://github.com/oducoelho/Weather-App/blob/master/images/first%20image.JPG)
 
-https://github.com/oducoelho/Weather-App/blob/master/images/second%20image.JPG
+![Main image of website](https://github.com/oducoelho/Weather-App/blob/master/images/second%20image.JPG)
 
 ### Built with ⚙
 
