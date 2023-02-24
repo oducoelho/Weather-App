@@ -1,13 +1,10 @@
-# Weather-App ![image](https://user-images.githubusercontent.com/104034703/221300650-6acca0b0-94da-4abe-b8ca-cb32cefc96cd.png)
-
+# Weather-App
 
 ### The challenge ⚡
 
 Users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- see more items than what's in the navbar
+- find your city's weather
 
 ### Screenshot 📷
 
@@ -32,11 +29,10 @@ Users should be able to:
 - Using the order property - flexbox  
 - More knowledge about building responsive websites
 - Changing the color of elements that has been highlighted by the user
-- Elegant animations of elements
 #### HTML
 - Improvement of my thinking logic in building the website structure right at the beginning of the entire building proces
 #### React.js
-- Using react to do a drop down menu
+- Using react to mede a fetch on API
 
 ### Continued development 🎯
 
