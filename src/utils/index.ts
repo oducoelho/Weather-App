@@ -13,16 +13,3 @@ export const getHour = (timestamp: number) =>
         "BBBB",
         { locale: pt }
     )}`;
-
-export const handleBodyStyles = () => {
-    const body = document.body;
-
-    if (
-        flexibleDayPeriod.includes("noite") ||
-        flexibleDayPeriod.includes("madrugada")
-    ) {
-        body.className = "night";
-    } else {
-        body.classList.remove("night");
-    }
-};

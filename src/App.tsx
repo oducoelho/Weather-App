@@ -11,9 +11,9 @@ export interface WeatherContent {
     name: string;
     region: string;
     country: string;
+    localtime_epoch: number;
   },
   current: {
-    last_updated_epoch: number;
     temp_c: string;
     condition: {
       text: string;
@@ -26,27 +26,38 @@ export const App = () => {
   const [city, setCity] = useState('')
   const [data, setData] = useState<WeatherContent>({} as WeatherContent)
   const [background, setBackground] = useState(day)
-
-  // console.log(data.current.last_updated_epoch);
-
-
-
   
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (city.length === 0) {
       alert('Please put a name of city before submitting')
     }
+
     
-    getHour(data.current.last_updated_epoch)
-    console.log(getHour);
     const response = await api.get(
       `${city}&aqi=no`
-    )
-    setData(response.data)
-  }
+      )
+      setData(response.data)
 
+      const id = Number(data.location.localtime_epoch)
+
+      if (id < 1677952800) {
+        setBackground(day)
+        alert('dia')
+      } else if (id > 1677952800) {
+        setBackground(night)
+        alert('noite')
+      }
+
+/*
+    const id = String(new Date().getTime())
   
+    if (id < '1677952800') {
+      setBackground(day)
+    } else {
+      setBackground(night)
+    } */
+  }
   return (
     <AppContainer 
       style={
