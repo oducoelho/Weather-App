@@ -24,7 +24,6 @@ export interface WeatherContent {
 export const App = () => {
   const [city, setCity] = useState('')
   const [data, setData] = useState<WeatherContent>({} as WeatherContent)
-  const [background, setBackground] = useState(day)
   
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -42,7 +41,7 @@ export const App = () => {
     <AppContainer 
       style={
         { 
-          backgroundImage: `url(${background})`, 
+          backgroundImage: `url(${day})`, 
           backgroundSize: 'cover',
         }
       }
