@@ -22,7 +22,6 @@ export const WheaderInformations = ({ data }: WeatherProps) => {
             <img src={data.current.condition.icon} alt="Image of temp" />
             {data.current.condition.text}
           </State>
-          {data.location.localtime_epoch}
         </>
       
       }

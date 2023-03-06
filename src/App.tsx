@@ -3,8 +3,6 @@ import { WheaderInformations } from "./components/WheaderInformations"
 import { api } from "./lib/api"
 import { AppContainer, Card, Form, Text} from "./styles/pages/main"
 import day from './assets/day.jpg'
-import night from './assets/night.jpg'
-import { getHour } from "./utils"
 
 export interface WeatherContent {
   location: {
@@ -14,6 +12,7 @@ export interface WeatherContent {
     localtime_epoch: number;
   },
   current: {
+    last_updated_epoch: string;
     temp_c: string;
     condition: {
       text: string;
@@ -32,32 +31,13 @@ export const App = () => {
     if (city.length === 0) {
       alert('Please put a name of city before submitting')
     }
-
     
     const response = await api.get(
       `${city}&aqi=no`
       )
       setData(response.data)
+    }
 
-      const id = Number(data.location.localtime_epoch)
-
-      if (id < 1677952800) {
-        setBackground(day)
-        alert('dia')
-      } else if (id > 1677952800) {
-        setBackground(night)
-        alert('noite')
-      }
-
-/*
-    const id = String(new Date().getTime())
-  
-    if (id < '1677952800') {
-      setBackground(day)
-    } else {
-      setBackground(night)
-    } */
-  }
   return (
     <AppContainer 
       style={
